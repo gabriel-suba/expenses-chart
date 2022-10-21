@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+:root {
+	/* Colors */
+	--primary-red: hsl(10, 79%, 65%);
+	--primary-cyan: hsl(186, 34%, 60%);
+	--neutral-dbrown: hsl(25, 47%, 15%);
+	--neutral-mbrown: hsl(28, 10%, 53%);
+	--neutral-cream: hsl(27, 66%, 92%);
+	--neutral-pale: hsl(33, 100%, 98%);
+
+	--red-hover: hsla(10, 79%, 65%, 0.6);
+	--cyan-hover: hsla(186, 34%, 60%, 0.6);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: var(--neutral-cream);
+	font-family: 'DM Sans', sans-serif;
+	font-size: 18px;
+}
+
+.container {
+	width: 90%;
+	max-width: 42rem;
+	margin: 0 auto;
+}
+
+.card-style {
+	padding: 1.66rem;
+	border-radius: 1.33rem;
+}
+
+.bg-red {
+	background-color: var(--primary-red);
+	color: var(--neutral-pale);
+}
+
+.bg-white {
+	background-color: var(--neutral-pale);
+	color: var(--neutral-dbrown);
+}
+
+.top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+}
+
+.bottom {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.chart {
+	height: 16rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.chart-container {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: flex-end;
+}
+
+.bar {
+	flex: 1;
+	max-width: 4.44rem;
+	min-width: 2.22rem;
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+
+	font-size: 0.9rem;
+}
+
+.bar .level {
+	width: 90%;
+	background-color: var(--primary-red);
+	border-radius: 0.44rem;
+	cursor: pointer;
+
+	position: relative;
+}
+
+.bar .label, .from {
+	color: var(--neutral-mbrown);
+}
+
+.level:hover {
+	background-color: var(--red-hover);
+}
+
+.curr:hover {
+	background-color: var(--primary-cyan);
+}
+
+.amount {
+	display: none;
+
+	width: fit-content;
+	margin-bottom: 1rem;
+	background-color: var(--neutral-dbrown);
+	color: var(--neutral-pale);
+	padding: 0.44rem;
+	border-radius: 0.33rem;
+	font-weight: 700;
+
+	position: absolute;
+	top: -2.33rem;
+	left: 50%;
+	transform: translateX(-50%);
+
+	z-index: 1;
+}
+
+.level:hover .amount {
+	display: block;
+}
+
+hr {
+	border: none;
+	height: 1px;
+	background-color: rgb(225, 225, 225);
+}
+
+.total {
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+}
+
+.total .label {
+	color: var(--neutral-mbrown);
+}
+
+.monthly {
+	display: flex;
+	justify-content: space-between;
+}
+
+.monthly-amount {
+	font-size: 2rem;
+}
+
+.monthly .right {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: right;
+
+	font-size: 0.9rem;
+}
+
+.percent {
+	font-weight: 700;
+}
